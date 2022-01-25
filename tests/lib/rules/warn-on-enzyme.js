@@ -1,3 +1,5 @@
+ /* eslint-disable */
+
 /**
  * @fileoverview Remind developers to remove enzyme when a file is updated.
  * @author Jess Lark
@@ -5,7 +7,7 @@
  "use strict";
 
 const RuleTester = require("eslint").RuleTester
-const lib = require("../../../lib/rules/warn-on-enzyme")
+const lib = require("../../../lib/")
 
 RuleTester.setDefaultConfig({
   parserOptions: {
@@ -18,7 +20,9 @@ RuleTester.setDefaultConfig({
 
 const ruleTester = new RuleTester()
 
-ruleTester.run('removeEnzyme', lib.rules.removeEnzyme, {
+const emzymeRule = lib.rules['warn-on-enzyme'];
+
+ruleTester.run('warn-on-enzyme', emzymeRule, {
   // any non-enzyme import should pass, whether options are included or not
   // import mount from something other than enzyme should pass
   valid: [

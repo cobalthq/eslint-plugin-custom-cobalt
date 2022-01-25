@@ -34,7 +34,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "custom-cobalt/rule-name": 2
+        "custom-cobalt/warn-on-enzyme": 2
     }
 }
 ```
