@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-custom-cobalt",
   "version": "0.0.0",
-  "description": "Remind devs to remove enzyme when a file is updated.",
+  "description": "Custom cobalt plugin for issues specific to our codebase.",
   "keywords": [
     "eslint",
     "eslintplugin",

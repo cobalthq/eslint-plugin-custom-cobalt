@@ -1,6 +1,6 @@
 # eslint-plugin-custom-cobalt
 
-Remind devs to remove enzyme when a file is updated.
+Custom cobalt plugin for issues specific to our codebase.
 
 ## Installation
 
