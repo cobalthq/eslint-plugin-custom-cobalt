@@ -1,7 +1,13 @@
 # eslint-plugin-custom-cobalt
 
-Remind devs to remove enzyme when a file is updated.
+Custom cobalt plugin for issues specific to our codebase.
 
+
+# Directions for using as a local repo rule // current as of January 2022
+
+// tba
+
+# Directions for using as a formal npm module // future
 ## Installation
 
 You'll first need to install [ESLint](https://eslint.org/):
@@ -34,13 +40,10 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "custom-cobalt/rule-name": 2
+        "custom-cobalt/warn-on-enzyme": "warn",
     }
 }
 ```
 
-## Supported Rules
-
-* Fill in provided rules here
 
 
