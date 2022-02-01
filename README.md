@@ -1,49 +1,52 @@
 # eslint-plugin-custom-cobalt
 
-Custom cobalt plugin for issues specific to our codebase.
+Custom cobalt eslint plugin for issues and preferences specific to our codebase and teams.
 
+Current rules:
+- warn on enzyme imports
 
-# Directions for using as a local repo rule // current as of January 2022
+# Consuming the plugin in any given repo
 
-// tba
-
-# Directions for using as a formal npm module // future
 ## Installation
 
-You'll first need to install [ESLint](https://eslint.org/):
+Ensure that eslint is installed: [ESLint](https://eslint.org/):
 
 ```sh
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-custom-cobalt`:
-
-```sh
-npm install eslint-plugin-custom-cobalt --save-dev
-```
-
 ## Usage
 
-Add `custom-cobalt` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `custom-cobalt` to the plugins section of your `.eslintrc` configuration file. Omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "custom-cobalt"
+        // other plugins in use
+        "custom-cobalt",
     ]
 }
 ```
 
 
-Then configure the rules you want to use under the rules section.
+Configure the rules you want to use under the rules section:
 
 ```json
 {
     "rules": {
+        // other rules in use
         "custom-cobalt/warn-on-enzyme": "warn",
     }
 }
 ```
 
+Add to the package.json as a dev dependency:
 
+```json
+{
+    "devDependencies": {
+        // other dev dependencies
+        "eslint-plugin-custom-cobalt": "git+https://github.com/cobalthq/eslint-plugin-custom-cobalt.git#(current tag number)",
+    }
+}
 

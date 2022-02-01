@@ -18,7 +18,11 @@ Examples of **correct** code for this rule:
 
 ```js
 
-// the absence of enzyme imports
+// no enzyme imports
+// react testing library is preferred
+// for example:
+
+import { render, screen } from '@testing-library/react'
 
 ```
 

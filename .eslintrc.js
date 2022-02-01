@@ -8,7 +8,7 @@ module.exports = {
     "plugin:node/recommended",
   ],
   "parserOptions": {
-    "sourceType": "module", // this should fix the testing bug
+    "sourceType": "module",
   },
   env: {
     node: true,
