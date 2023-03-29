@@ -4,11 +4,10 @@ module.exports = {
   root: true,
   extends: [
     "eslint:recommended",
-    "plugin:eslint-plugin/recommended",
-    "plugin:node/recommended",
   ],
-  "parserOptions": {
-    "sourceType": "module",
+  parserOptions: {
+    sourceType: "module",
+    allowImportExportEverywhere: true
   },
   env: {
     node: true,
@@ -17,6 +16,7 @@ module.exports = {
     {
       files: ["tests/**/*.js"],
       env: { mocha: true },
+      extends: "plugin:node/recommended-module"
     },
   ],
 };
