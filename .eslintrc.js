@@ -1,14 +1,12 @@
-"use strict";
+"use strict"
 
 module.exports = {
   root: true,
-  extends: [
-    "eslint:recommended",
-    "plugin:eslint-plugin/recommended",
-    "plugin:node/recommended",
-  ],
-  "parserOptions": {
-    "sourceType": "module",
+  extends: ["eslint:recommended"],
+  parserOptions: {
+    allowImportExportEverywhere: true,
+    ecmaVersion: 2020,
+    sourceType: "module",
   },
   env: {
     node: true,
@@ -17,6 +15,7 @@ module.exports = {
     {
       files: ["tests/**/*.js"],
       env: { mocha: true },
+      extends: "plugin:node/recommended-module",
     },
   ],
-};
+}

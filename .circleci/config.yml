@@ -1,0 +1,59 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+workflows:
+  test:
+    jobs:
+    - install-dependencies
+    - run-tests:
+        requires:
+        - install-dependencies
+jobs:
+  install-dependencies:
+    resource_class: medium
+    docker:
+      - image: cimg/node:16.16.0
+    steps:
+      - https_checkout_local
+      - restore_cache:
+          keys:
+            - dependency-cache-{{ .Environment.CACHE_VERSION }}-{{ checksum "package-lock.json" }}
+            - dependency-cache-{{ .Environment.CACHE_VERSION }}-
+      - run: npm ci
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependency-cache-{{ .Environment.CACHE_VERSION }}-{{ checksum "package-lock.json" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+  run-tests:
+    resource_class: medium
+    docker:
+      - image: cimg/node:16.16.0
+    steps:
+      - https_checkout_local
+      - run: npm ci
+      - run:
+          name: Run Test and Coverage
+          no_output_timeout: 20m
+          command: |
+            TESTFILES=$(circleci tests glob "tests/lib/rules/*.test.js" | circleci tests split --split-by=timings)
+            [ -z "$TESTFILES" ] && echo "Test files empty?!" && exit 1
+            echo Testing: $TESTFILES
+            npm run test:ci -- $TESTFILES
+commands:
+  https_checkout_local:
+    steps:
+      - run:
+          name: Https checkout code
+          command: |
+            echo '#!/bin/sh' > ../git-credentials
+            echo 'echo username="${GITHUB_USERNAME}"' >> ../git-credentials
+            echo 'echo password="${GITHUB_TOKEN}"' >> ../git-credentials
+            chmod +x ../git-credentials
+            git config --global credential.helper "${PWD}/../git-credentials"
+            echo "Checking out ${CIRCLE_BRANCH:-${CIRCLE_TAG}} of https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}..."
+            git clone --branch "${CIRCLE_BRANCH:-${CIRCLE_TAG}}" \
+                "https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}" .

@@ -5,6 +5,9 @@ Custom cobalt eslint plugin for issues and preferences specific to our codebase 
 Current rules:
 - warn on enzyme imports
 
+## Documentation
+This project uses [MADR](https://adr.github.io/madr) to record architectural decisions. You can find more information under [docs/adr](docs/adr/README.md) folder
+
 # Consuming the plugin in any given repo
 
 ## Installation
@@ -28,7 +31,6 @@ Add `custom-cobalt` to the plugins section of your `.eslintrc` configuration fil
 }
 ```
 
-
 Configure the rules you want to use under the rules section:
 
 ```json
@@ -49,4 +51,3 @@ Add to the package.json as a dev dependency:
         "eslint-plugin-custom-cobalt": "git+https://github.com/cobalthq/eslint-plugin-custom-cobalt.git#(current tag number)",
     }
 }
-
