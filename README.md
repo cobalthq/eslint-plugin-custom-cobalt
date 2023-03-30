@@ -28,7 +28,6 @@ Add `custom-cobalt` to the plugins section of your `.eslintrc` configuration fil
 }
 ```
 
-
 Configure the rules you want to use under the rules section:
 
 ```json
@@ -49,4 +48,3 @@ Add to the package.json as a dev dependency:
         "eslint-plugin-custom-cobalt": "git+https://github.com/cobalthq/eslint-plugin-custom-cobalt.git#(current tag number)",
     }
 }
-
