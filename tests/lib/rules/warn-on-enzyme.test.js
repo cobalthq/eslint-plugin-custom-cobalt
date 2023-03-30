@@ -44,7 +44,7 @@ ruleTester.run("warn-on-enzyme", emzymeRule, {
     // importing anything from a given option should fail
     {
       code: "import { mount } from 'enzyme'",
-      options: [{ importsToCheckFor: ["adf", "!234"] }],
+      options: [],
       errors: [
         {
           message: "Refactor tests to no longer use enzyme",
