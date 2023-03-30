@@ -5,6 +5,9 @@ Custom cobalt eslint plugin for issues and preferences specific to our codebase 
 Current rules:
 - warn on enzyme imports
 
+## Documentation
+This project uses [MADR](https://adr.github.io/madr) to record architectural decisions. You can find more information under [docs/adr](docs/adr/README.md) folder
+
 # Consuming the plugin in any given repo
 
 ## Installation

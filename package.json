@@ -15,9 +15,11 @@
     "test:ci": "mocha tests --recursive"
   },
   "dependencies": {
+    "madr": "^3.0.0",
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.21.3",
     "eslint": "^8.0.1",
     "eslint-plugin-eslint-plugin": "^4.0.1",
     "eslint-plugin-node": "^11.1.0",

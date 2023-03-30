@@ -4,7 +4,7 @@
  * @fileoverview Remind developers to remove enzyme when a file is updated.
  * @author Jess Lark
  */
- "use strict";
+"use strict"
 
 const RuleTester = require("eslint").RuleTester
 const lib = require("../../../lib/")
@@ -16,15 +16,24 @@ RuleTester.setDefaultConfig({
       jsx: true,
     },
     sourceType: "module",
+<<<<<<< Updated upstream:tests/lib/rules/warn-on-enzyme.test.js
     allowImportExportEverywhere: true
+=======
+>>>>>>> Stashed changes:tests/lib/rules/warn-on-enzyme.js
   },
 })
 
 const ruleTester = new RuleTester()
 
+<<<<<<< Updated upstream:tests/lib/rules/warn-on-enzyme.test.js
 const enzymeRule = lib.rules['warn-on-enzyme'];
 
 ruleTester.run('warn-on-enzyme', enzymeRule, {
+=======
+const emzymeRule = lib.rules["warn-on-enzyme"]
+
+ruleTester.run("warn-on-enzyme", emzymeRule, {
+>>>>>>> Stashed changes:tests/lib/rules/warn-on-enzyme.js
   // any non-enzyme import should pass, whether options are included or not
   // import mount from something other than enzyme should pass
   valid: [
@@ -34,7 +43,7 @@ ruleTester.run('warn-on-enzyme', enzymeRule, {
     },
     {
       code: "import { mount } from 'notEnzyme'",
-      options: [{ importsToCheckFor: ['enzyme', 'otherThing', 'yetAnother'] }],
+      options: [{ importsToCheckFor: ["enzyme", "otherThing", "yetAnother"] }],
     },
   ],
 
@@ -42,39 +51,36 @@ ruleTester.run('warn-on-enzyme', enzymeRule, {
     // importing anything from enzyme should fail if there are no options
     // importing anything from enzyme should fail if there are multiple options
     // importing anything from a given option should fail
-    // importing items from a multiple given options should fail
-
-    // importing items from enzyme when options that don't include 'emzyme' are given SHOULD fail but probably doesn't
-
     {
       code: "import { mount } from 'enzyme'",
       options: [],
       errors: [
         {
-          message: 'Refactor tests to no longer use enzyme',
-          type: 'ImportDeclaration',
+          message: "Refactor tests to no longer use enzyme",
+          type: "ImportDeclaration",
         },
       ],
     },
     {
       code: "import { something } from 'enzyme'",
       options: [
-        { importsToCheckFor: ['enzyme', 'otherThing', 'enzymeRelatedThing'] },
+        { importsToCheckFor: ["enzyme", "otherThing", "enzymeRelatedThing"] },
       ],
       errors: [
         {
-          message: 'Refactor tests to no longer use enzyme',
-          type: 'ImportDeclaration',
+          message: "Refactor tests to no longer use enzyme",
+          type: "ImportDeclaration",
         },
       ],
     },
     {
       code: "import { something } from 'enzymeRelatedThing'",
       options: [
-        { importsToCheckFor: ['enzyme', 'otherThing', 'enzymeRelatedThing'] },
+        { importsToCheckFor: ["enzyme", "otherThing", "enzymeRelatedThing"] },
       ],
       errors: [
         {
+<<<<<<< Updated upstream:tests/lib/rules/warn-on-enzyme.test.js
           message: 'Refactor tests to no longer use enzyme',
           type: 'ImportDeclaration',
         },
@@ -103,6 +109,10 @@ ruleTester.run('warn-on-enzyme', enzymeRule, {
         {
           message: 'Refactor tests to no longer use enzyme',
           type: 'ImportDeclaration',
+=======
+          message: "Refactor tests to no longer use enzyme",
+          type: "ImportDeclaration",
+>>>>>>> Stashed changes:tests/lib/rules/warn-on-enzyme.js
         },
       ],
     },

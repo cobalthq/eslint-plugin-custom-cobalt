@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 module.exports = {
   root: true,
@@ -7,7 +7,10 @@ module.exports = {
   ],
   parserOptions: {
     sourceType: "module",
+<<<<<<< Updated upstream
     allowImportExportEverywhere: true
+=======
+>>>>>>> Stashed changes
   },
   env: {
     node: true,
@@ -19,4 +22,4 @@ module.exports = {
       extends: "plugin:node/recommended-module"
     },
   ],
-};
+}
