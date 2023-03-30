@@ -2,15 +2,11 @@
 
 module.exports = {
   root: true,
-  extends: [
-    "eslint:recommended",
-  ],
+  extends: ["eslint:recommended"],
   parserOptions: {
+    allowImportExportEverywhere: true,
+    ecmaVersion: 2020,
     sourceType: "module",
-<<<<<<< Updated upstream
-    allowImportExportEverywhere: true
-=======
->>>>>>> Stashed changes
   },
   env: {
     node: true,
@@ -19,7 +15,7 @@ module.exports = {
     {
       files: ["tests/**/*.js"],
       env: { mocha: true },
-      extends: "plugin:node/recommended-module"
+      extends: "plugin:node/recommended-module",
     },
   ],
 }
