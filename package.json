@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-custom-cobalt",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Custom cobalt plugin for issues specific to our codebase.",
   "keywords": [
     "eslint",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.3",
-    "eslint": "^8.0.1",
+    "eslint": "^7.17.0",
     "eslint-plugin-eslint-plugin": "^4.0.1",
     "eslint-plugin-node": "^11.1.0",
     "mocha": "^9.1.3",
