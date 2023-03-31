@@ -6,7 +6,8 @@ Current rules:
 - warn on enzyme imports
 
 ## Documentation
-This project uses [MADR](https://adr.github.io/madr) to record architectural decisions. You can find more information under [docs/adr](docs/adr/README.md) folder
+
+This project uses [MADR](https://adr.github.io/madr) to record architectural decisions. You can find more information under [docs/decisions](docs/decisions/README.md) folder
 
 ## Contribute
 Our [CONTRIBUTING.md](CONTRIBUTING.md) is a step-by-step setup and development guide.
