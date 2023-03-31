@@ -22,9 +22,9 @@ RuleTester.setDefaultConfig({
 
 const ruleTester = new RuleTester()
 
-const emzymeRule = lib.rules["warn-on-enzyme"]
+const enzymeRule = lib.rules["warn-on-enzyme"]
 
-ruleTester.run("warn-on-enzyme", emzymeRule, {
+ruleTester.run("warn-on-enzyme", enzymeRule, {
   // any non-enzyme import should pass, whether options are included or not
   // import mount from something other than enzyme should pass
   valid: [
