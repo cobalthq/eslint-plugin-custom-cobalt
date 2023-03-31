@@ -8,6 +8,8 @@ Current rules:
 ## Documentation
 This project uses [MADR](https://adr.github.io/madr) to record architectural decisions. You can find more information under [docs/adr](docs/adr/README.md) folder
 
+## Contribute
+Our [CONTRIBUTING.md](CONTRIBUTING.md) is a step-by-step setup and development guide.
 # Consuming the plugin in any given repo
 
 ## Installation
