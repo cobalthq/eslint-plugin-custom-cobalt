@@ -1,5 +1,7 @@
 # eslint-plugin-custom-cobalt
-
+```
+Archived: 2023-06-21; the rule implemented was to warm on enzyme, based on technical direction to reduce & eliminate enzyme from the codeabse.  We achieved full removal of enzyme, and all engineers are trained not to add it back to the tech stack.  At this time, since we don't have a need for other custom rules, we will archive the repo to forgo maintenance, security updates, quarterly maturity checks etc. Decision was made collectively by 1 Staff Eng + 2 additional engineers.
+```
 Custom cobalt eslint plugin for issues and preferences specific to our codebase and teams.
 
 Current rules:
